@@ -765,7 +765,7 @@ static void init_get_clock(void)
 #endif
 }
 
-static int64_t get_clock(void)
+static int64_t get_clock(void) //ns级别
 {
 #if defined(__linux__) || (defined(__FreeBSD__) && __FreeBSD_version >= 500000)
     if (use_rt_clock) {

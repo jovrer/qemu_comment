@@ -7637,7 +7637,7 @@ static inline void gen_intermediate_code_internal(CPUState *env,
         if (num_insns + 1 == max_insns && (tb->cflags & CF_LAST_IO))
             gen_io_start();
 
-        pc_ptr = disas_insn(dc, pc_ptr);
+        pc_ptr = disas_insn(dc, pc_ptr); //bingo
         num_insns++;
         /* stop translation if indicated */
         if (dc->is_jmp)
