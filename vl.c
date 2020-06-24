@@ -3755,7 +3755,7 @@ void main_loop_wait(int timeout)
 
     /* real time timers */
     qemu_run_timers(&active_timers[QEMU_TIMER_REALTIME],
-                    qemu_get_clock(rt_clock));
+                    qemu_get_clock(rt_clock));   //bingo
 
     /* Check bottom-halves last in case any of the earlier events triggered
        them.  */
