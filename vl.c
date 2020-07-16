@@ -1765,7 +1765,7 @@ static int init_timer_alarm(void)
         t = &alarm_timers[i];
 
         err = t->start(t);
-        if (!err)
+        if (!err) //start and break 
             break;
     }
 

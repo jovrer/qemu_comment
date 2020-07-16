@@ -1177,7 +1177,7 @@ void tcg_target_qemu_prologue(TCGContext *s)
 
     /* TB prologue */
     /* save all callee saved registers */
-    for(i = 0; i < ARRAY_SIZE(tcg_target_callee_save_regs); i++) {
+    for(i = 0; i < ARRAY_SIZE(tcg_target_callee_save_regs); i++) { //save regs
         tcg_out_push(s, tcg_target_callee_save_regs[i]);
 
     }
