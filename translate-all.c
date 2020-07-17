@@ -94,7 +94,7 @@ int cpu_gen_code(CPUState *env, TranslationBlock *tb, int *gen_code_size_ptr)
 #endif
     tcg_func_start(s);
 
-    gen_intermediate_code(env, tb); //??
+    gen_intermediate_code(env, tb); //gen op code
 
     /* generate machine code */
     gen_code_buf = tb->tc_ptr;
@@ -118,7 +118,7 @@ int cpu_gen_code(CPUState *env, TranslationBlock *tb, int *gen_code_size_ptr)
     s->interm_time += profile_getclock() - ti;
     s->code_time -= profile_getclock();
 #endif
-    gen_code_size = tcg_gen_code(s, gen_code_buf);
+    gen_code_size = tcg_gen_code(s, gen_code_buf); //gen host code
     *gen_code_size_ptr = gen_code_size;
 #ifdef CONFIG_PROFILER
     s->code_time += profile_getclock();
