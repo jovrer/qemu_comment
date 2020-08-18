@@ -78,7 +78,7 @@ PROGS=$(QEMU_PROG)
 cc-option = $(shell if $(CC) $(1) $(2) -S -o /dev/null -xc /dev/null \
               > /dev/null 2>&1; then echo "$(2)"; else echo "$(3)"; fi ;)
 
-HELPER_CFLAGS=
+HELPER_CFLAGS=-ggdb3 -O0 
 
 ifeq ($(ARCH),i386)
 HELPER_CFLAGS+=-fomit-frame-pointer

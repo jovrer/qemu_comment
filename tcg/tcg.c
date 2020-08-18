@@ -235,7 +235,7 @@ void tcg_context_init(TCGContext *s)
     tcg_target_init(s);
 
     /* init global prologue and epilogue */
-    s->code_buf = code_gen_prologue;
+    s->code_buf = code_gen_prologue; //store prologue function
     s->code_ptr = s->code_buf;
     tcg_target_qemu_prologue(s);
     flush_icache_range((unsigned long)s->code_buf, 

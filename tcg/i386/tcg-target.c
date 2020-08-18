@@ -1164,7 +1164,7 @@ void tcg_target_qemu_prologue(TCGContext *s)
     stack_addend = frame_size - push_size;
     tcg_out_addi(s, TCG_REG_ESP, -stack_addend);
 
-    tcg_out_modrm(s, 0xff, 4, TCG_REG_EAX); /* jmp *%eax */
+    tcg_out_modrm(s, 0xff, 4, TCG_REG_EAX); /* jmp *%eax */ //goto host code
     
     /* TB epilogue */
     tb_ret_addr = s->code_ptr;
